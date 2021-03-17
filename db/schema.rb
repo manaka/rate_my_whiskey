@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_17_113955) do
+ActiveRecord::Schema.define(version: 2021_03_17_114638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2021_03_17_113955) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "scores", force: :cascade do |t|
+    t.bigint "whiskey_id", null: false
+    t.bigint "score_type_id", null: false
+    t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["score_type_id"], name: "index_scores_on_score_type_id"
+    t.index ["whiskey_id"], name: "index_scores_on_whiskey_id"
+  end
+
   create_table "whiskeys", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -28,4 +38,6 @@ ActiveRecord::Schema.define(version: 2021_03_17_113955) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "scores", "score_types"
+  add_foreign_key "scores", "whiskeys"
 end
