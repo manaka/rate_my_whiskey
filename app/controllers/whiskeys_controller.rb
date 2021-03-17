@@ -13,6 +13,11 @@ class WhiskeysController < ApplicationController
   # GET /whiskeys/new
   def new
     @whiskey = Whiskey.new
+    @score_types = ScoreType.all
+    @score_types.each do |score_type|
+      @whiskey.scores.build(score_type_id: score_type.id)
+    end
+
   end
 
   # GET /whiskeys/1/edit
@@ -64,6 +69,6 @@ class WhiskeysController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def whiskey_params
-      params.require(:whiskey).permit(:title, :description)
+      params.require(:whiskey).permit(:title, :description, scores_attributes: [:score_type_id, :score, :whiskey_id])
     end
 end

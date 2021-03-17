@@ -20,6 +20,12 @@
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
+  <div class="field">
+  <%= form.fields_for :scores do |ff| %>
+    <%= ff.hidden_field :score_type_id %>
+    <%= ff.object.score_type.name %>:<%= ff.number_field :score %><br/>
+  <% end %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

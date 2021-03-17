@@ -7,6 +7,7 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
+      <th><!-- --></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,11 @@
       <tr>
         <td><%= whiskey.title %></td>
         <td><%= whiskey.description %></td>
+        <td>
+          <% whiskey.scores.each do |score| %>
+            <%= score.score_type.name %>: <%=score.score %><br/>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', whiskey %></td>
         <td><%= link_to 'Edit', edit_whiskey_path(whiskey) %></td>
         <td><%= link_to 'Destroy', whiskey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
