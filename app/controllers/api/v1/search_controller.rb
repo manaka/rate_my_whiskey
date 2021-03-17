@@ -6,8 +6,8 @@ class Api::V1::SearchController < Api::V1::BaseController
                   Whiskey.includes(:scores).search(params[:q]).all
                 end
 
-    respond_to do |format|
-      format.json { render json: @whiskeys.as_json(include: [:scores]) }
-    end
+    # respond_to do |format|
+    #   format.json { render json: @whiskeys.as_json(include: [:scores]) }
+    # end
   end
 end
