@@ -11,4 +11,8 @@ class Whiskey < ApplicationRecord
     where("TITLE LIKE ? OR DESCRIPTION LIKE ? ", "%#{query}%", "%#{query}%")
   end
 
+  def self.search_by_rating(query)
+    joins(:scores).where("scores.score_type_id = ? AND scores.score >= ?", query[:id], query[:score])
+  end
+
 end
