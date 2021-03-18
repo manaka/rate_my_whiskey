@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project done in approximately one working day.
+There for I don't know before React my solution far from perfect but it worked
+I know that testing may be done better, but it is what can I do in one day. 
+If you need more accurate and some ux and design, that's no problem but takes more time to do.
 
-Things you may want to cover:
+Search located on separate page /search
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
