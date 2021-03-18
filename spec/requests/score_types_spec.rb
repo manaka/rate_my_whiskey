@@ -17,11 +17,11 @@ RSpec.describe "/score_types", type: :request do
   # ScoreType. As you add validations to ScoreType, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {name: 'MyName'}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {name: nil}
   }
 
   describe "GET /index" do

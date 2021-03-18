@@ -1,6 +1,5 @@
 class ScoreType < ApplicationRecord
-  has_many :scores
-
-  validates :title, presence: true, length: { in: 1..250 }
+  has_many :scores, dependent: :destroy
+  validates :name, presence: true, length: { in: 1..250 }
 
 end
