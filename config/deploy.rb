@@ -4,11 +4,11 @@ lock '3.4.0'
 set :application, 'rate_my_whiskey'
 set :repo_url, 'git@github.com:manaka/rate_my_whiskey.git'
 set :deploy_to, '/var/www/rails'
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', "config/master.key")
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 set :keep_releases, 3
 
-append :linked_files, "config/master.key"
+# append :linked_files, "config/master.key"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
